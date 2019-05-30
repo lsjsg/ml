@@ -35,7 +35,7 @@ plt.show()
 optimizer = torch.optim.SGD(net.parameters(),lr=0.02)
 loss_func = torch.nn.CrossEntropyLoss()
 
-for t in range(100):
+for t in range(2):
     out = net(x)
     loss = loss_func(out,y)
     optimizer.zero_grad()
@@ -52,3 +52,6 @@ for t in range(100):
         plt.pause(0.1)
 plt.ioff()
 plt.show()
+for i in net.parameters():
+    print(i)
+# print(net.parameters())
